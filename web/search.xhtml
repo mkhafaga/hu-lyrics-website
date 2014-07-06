@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+     <f:metadata>
+            <f:viewParam name="q" value="#{searchController.q}"/>
+            <f:event type="preRenderView" listener="#{searchController.init}" />
+        </f:metadata>
+    <h:head>
+       
+        <title>HuLyrics -  Search</title>
+    </h:head>
+    <h:body  >
+
+
+        <ui:composition template="template.xhtml">
+            <ui:define name="content" >
+                <p:panel styleClass="contentPanel">
+                      <p:fieldset legend="Artists">
+                    <p:dataGrid value="#{searchController.artists}" var="artist" styleClass="ui-datagrid-no-border">
+                    <p:column>
+                        <h:link outcome="song" value="#{artist.artistName}" >
+                            <f:param name="artistName" value="#{artist.artistName}"/>
+                        </h:link>
+                    </p:column>
+                </p:dataGrid>
+                      </p:fieldset><br/>
+                <p:fieldset legend="Albums">
+                     <p:dataGrid value="#{searchController.albums}" var="album" styleClass="ui-datagrid-no-border">
+                 <p:column>
+                     <h:link outcome="song" value="#{album.albumName}" >
+                         <f:param name="albumId" value="#{album.id}"/>
+                     </h:link>
+                    </p:column>
+                </p:dataGrid>
+                </p:fieldset><br/>
+                <p:fieldset legend="Songs">
+                    <p:dataGrid value="#{searchController.songs}" var="song" styleClass="ui-datagrid-no-border">
+                <p:column>
+                    <h:link outcome="lyric" value="#{song.title}" >
+                        <f:param name="songId" value="#{song.id}"/>
+                    </h:link>
+                    </p:column>
+                </p:dataGrid>
+                    
+                </p:fieldset>
+                </p:panel>
+              
+               
+                
+            </ui:define>
+            
+        </ui:composition>
+        </h:body>
+</html>
+

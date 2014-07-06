@@ -1,0 +1,75 @@
+body {
+    background-color: #ffffff;
+    font-size: 12px;
+    font-family: Verdana, "Verdana CE",  Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
+    color: #000000;  
+    margin: 10px;
+}
+
+h1 {
+    font-family: Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
+    border-bottom: 1px solid #AFAFAF; 
+    font-size:  16px;
+    font-weight: bold;
+    margin: 0px;
+    padding: 0px;
+    color: #D20005;
+}
+
+a:link, a:visited {
+    color: #045491;
+    font-weight : bold;
+    text-decoration: none;
+}
+
+a:link:hover, a:visited:hover  {
+    color: #045491;
+    font-weight : bold;
+    text-decoration : underline;
+}
+
+/*table, table tr, table td {
+    border: none !important;
+}*/
+
+.noBorders tr, .noBorders td {
+    background: none !important;
+    border: none !important;
+}
+
+.unbordered{
+    background: none !important;
+    border: none !important;
+}
+.centered{
+    margin: 0 auto;
+    width: 60%;
+
+}
+
+.contentPanel{
+    border: black solid 1px;
+    min-height: 440px;
+    width: 80%;
+    margin: 0px auto;
+    
+}
+.footer{
+    width: 80%;
+    height: 20px;
+    margin: 0 auto;
+    border: 0 !important;
+    text-align: center;
+    /*border: 1px black solid;*/
+}
+.header{
+    width: 80%;
+    margin: 0 auto;
+     background: none !important;
+    border: none !important;
+}
+.ui-datagrid-no-border .ui-datagrid-content {
+   border: none;
+} 
+
+

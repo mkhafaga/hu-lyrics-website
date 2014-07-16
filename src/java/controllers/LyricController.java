@@ -28,11 +28,13 @@ public class LyricController {
         LyricsClient client = new LyricsClient();
         try{
           //     lyric =   client.getLyricForASong(songId.toString());
+            System.out.println("song: "+song+" - artist: "+artist);
             lyric =  client.getLyricBySongCriteria(getSong(), getArtist());
                    
    client.updateViews(""+lyric.getId(),""+(lyric.getViews()+1));
 
         }catch(Exception e){
+            e.printStackTrace();
         lyric = new Lyric();
         lyric.setWords("There is no Lyrics for this song , yet!");
         }

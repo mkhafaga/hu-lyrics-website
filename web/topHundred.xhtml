@@ -17,10 +17,11 @@
          <ui:composition template="template.xhtml">
              <ui:define name="content">
                  <p:fieldset legend="Top 100" styleClass="contentPanel">
-                     <p:dataGrid  value="#{topHundredController.songs}" var="song" styleClass="ui-datagrid-no-border">
+                     <p:dataGrid  value="#{topHundredController.topHundredItems}" var="topHundredItem" styleClass="ui-datagrid-no-border">
                         <p:column>
-                            <h:link value="#{song.title}" outcome="lyric" >
-                                <f:param name="songId" value="#{song.id}" />   
+                            <h:link value="#{topHundredItem.songTitle}" outcome="lyric" >
+                                <f:param name="song" value="#{topHundredItem.songTitle}" />  
+                                <f:param name="artist" value="#{topHundredItem.artistName}" />   
                             </h:link>
                          
                         </p:column>
